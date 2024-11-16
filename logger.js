@@ -27,6 +27,30 @@
 //     console.log(c);
 // }
 // digits(10,5,20);
+var Invoice = /** @class */ (function () {
+    function Invoice(client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
+    }
+    Invoice.prototype.format = function () {
+        return "".concat(this.client, " owes \u00A3").concat(this.amount, " for ").concat(this.details);
+    };
+    return Invoice;
+}());
+var invOne = new Invoice('David', 'work on the website', 250);
+var invTwo = new Invoice('Jane', 'work on the website', 300);
+console.log(invOne, invTwo);
+invOne.client = 'Chris';
+invTwo.amount = 400;
+console.log(invOne, invTwo);
+var invoices = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+console.log(invoices);
+invoices.forEach(function (inv) {
+    console.log(inv.format());
+});
 var form = document.querySelector('.new-item-form');
 // console.log(form.children);
 var type = document.querySelector('#type');

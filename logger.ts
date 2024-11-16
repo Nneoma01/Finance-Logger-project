@@ -34,6 +34,43 @@
 // }
 // digits(10,5,20);
 
+class Invoice {
+    constructor(
+        public client: string,
+        public details: string,
+        public amount: number
+    ){}
+    
+
+    format() {
+        return `${this.client} owes £${this.amount} for ${this.details}`;
+    }
+}
+
+const invOne = new Invoice('David', 'work on the website', 250);
+const invTwo = new Invoice('Jane', 'work on the website', 300);
+
+console.log(invOne, invTwo);
+
+invOne.client = 'Chris';
+invTwo.amount = 400;
+console.log(invOne, invTwo)
+
+
+
+let invoices: Invoice[] = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+
+console.log(invoices);
+
+invoices.forEach(inv => {
+    console.log(inv.format());
+});
+
+
+
+
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
 // console.log(form.children);
 
