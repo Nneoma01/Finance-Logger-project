@@ -91,3 +91,24 @@ form.addEventListener('submit', (e: Event) => {
         amount.valueAsNumber
     );
 })
+
+// interfaces
+interface IsPerson {
+    name: string;
+    age: number;
+    speak(a: string): void;
+    spend(b: number): number;
+}    
+
+const purchase : IsPerson = {
+    name: "Nneoma",
+    age: 25,
+    speak(text: string): void{
+        console.log(text);
+    },
+    spend(amount: number): number{
+        console.log("I spent", amount);
+        return amount;
+    }
+}
+console.log(purchase);

@@ -63,3 +63,15 @@ form.addEventListener('submit', function (e) {
     e.preventDefault();
     console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
 });
+var purchase = {
+    name: "Nneoma",
+    age: 25,
+    speak: function (text) {
+        console.log(text);
+    },
+    spend: function (amount) {
+        console.log("I spent", amount);
+        return amount;
+    }
+};
+console.log(purchase);
